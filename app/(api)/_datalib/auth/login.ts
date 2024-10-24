@@ -1,11 +1,10 @@
 'use server';
 import { NextResponse } from 'next/server';
-
 import bcrypt from 'bcryptjs';
+import { signIn } from 'auth';
 
 import { HttpError, NotAuthenticatedError } from '@utils/response/Errors';
 import { GetManyJudges } from '@datalib/judges/getJudge';
-import { createAuthToken } from './authToken';
 
 export async function Login(body: { email: string; password: string }) {
   try {
@@ -29,9 +28,18 @@ export async function Login(body: { email: string; password: string }) {
       throw new NotAuthenticatedError('Email or Password do not match');
     }
 
-    const token = await createAuthToken(judge);
+    const response = await signIn('credentials', {
+      email: judge.email,
+      password: judge.password,
+      redirect: false,
+    });
+
+    if (!response?.ok) {
+      throw new NotAuthenticatedError('Invalid login credentials');
+    }
+
     return NextResponse.json(
-      { ok: true, body: token, error: null },
+      { ok: true, body: response, error: null },
       { status: 200 }
     );
   } catch (e) {
