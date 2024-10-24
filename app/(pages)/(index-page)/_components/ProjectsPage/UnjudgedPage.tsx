@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const UnjudgedPage = () => {
-  return (
-    <div>UnjudgedPage</div>
-  )
-}
+  return <div>UnjudgedPage</div>;
+};
 
-export default UnjudgedPage
+export default UnjudgedPage;

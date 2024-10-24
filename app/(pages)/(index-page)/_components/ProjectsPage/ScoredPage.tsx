@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const ScoredPage = () => {
-  return (
-    <div>ScoredPage</div>
-  )
-}
+  return <div>ScoredPage</div>;
+};
 
-export default ScoredPage
+export default ScoredPage;

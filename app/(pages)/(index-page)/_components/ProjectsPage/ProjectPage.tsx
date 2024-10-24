@@ -1,8 +1,8 @@
 'use client';
-import React, { useState } from "react";
-import { FaChevronLeft } from "react-icons/fa6";
-import UnjudgedPage from "./UnjudgedPage";
-import ScoredPage from "./ScoredPage";
+import React, { useState } from 'react';
+import { FaChevronLeft } from 'react-icons/fa6';
+import UnjudgedPage from './UnjudgedPage';
+import ScoredPage from './ScoredPage';
 
 interface ButtonProps {
   text: string;
@@ -19,7 +19,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => (
   <button
     className={`${width} tw-h-[42px] tw-border-[1.5px] tw-border-[#005271] tw-border-solid tw-rounded-[20px] tw-text-[#005271] tw-text-lg tw-font-semibold tw-tracking-[0.36px] tw-flex tw-items-center tw-justify-center ${
-      isSelected ? "tw-bg-[#9EE7E5]" : "tw-bg-white"
+      isSelected ? 'tw-bg-[#9EE7E5]' : 'tw-bg-white'
     }`}
     onClick={onClick}
   >
@@ -28,8 +28,8 @@ const Button: React.FC<ButtonProps> = ({
 );
 
 const ProjectPage = () => {
-  const [selectedButton, setSelectedButton] = useState<"Unjudged" | "Scored">(
-    "Unjudged"
+  const [selectedButton, setSelectedButton] = useState<'Unjudged' | 'Scored'>(
+    'Unjudged'
   );
 
   return (
@@ -48,19 +48,19 @@ const ProjectPage = () => {
       <div className="tw-flex tw-px-[20px] tw-space-x-[8px] tw-bg-white tw-mb-[32px]">
         <Button
           text="Unjudged"
-          isSelected={selectedButton === "Unjudged"}
+          isSelected={selectedButton === 'Unjudged'}
           width="tw-w-[136px]"
-          onClick={() => setSelectedButton("Unjudged")}
+          onClick={() => setSelectedButton('Unjudged')}
         />
         <Button
           text="Scored"
-          isSelected={selectedButton === "Scored"}
+          isSelected={selectedButton === 'Scored'}
           width="tw-w-[114px]"
-          onClick={() => setSelectedButton("Scored")}
+          onClick={() => setSelectedButton('Scored')}
         />
       </div>
       <div className="tw-px-[20px]">
-        {selectedButton === "Unjudged" ? <UnjudgedPage /> : <ScoredPage />}
+        {selectedButton === 'Unjudged' ? <UnjudgedPage /> : <ScoredPage />}
       </div>
     </div>
   );
