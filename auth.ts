@@ -6,19 +6,19 @@ import { GetManyJudges } from '@datalib/judges/getJudge';
 
 declare module 'next-auth' {
   interface User {
-    role?: string;
+    role: string;
   }
 
   interface Session extends DefaultSession {
     user: {
-      role?: string;
+      role: string;
     } & DefaultSession['user'];
   }
 }
 
 declare module 'next-auth/jwt' {
   interface JWT {
-    role?: string;
+    role: string;
   }
 }
 

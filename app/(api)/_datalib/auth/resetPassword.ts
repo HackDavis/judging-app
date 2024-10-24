@@ -5,6 +5,7 @@ import bcrypt from 'bcryptjs';
 import { GetManyJudges } from '@datalib/judges/getJudge';
 import { UpdateJudge } from '@datalib/judges/updateJudge';
 import { HttpError } from '@utils/response/Errors';
+import { signOut } from 'auth';
 
 export async function ResetPassword(body: { email: string; password: string }) {
   try {
@@ -26,6 +27,8 @@ export async function ResetPassword(body: { email: string; password: string }) {
     });
 
     const updateData = await updateRes.json();
+
+    await signOut();
 
     return NextResponse.json(
       { ok: true, body: updateData, error: null },

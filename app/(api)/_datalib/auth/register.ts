@@ -33,12 +33,10 @@ export async function Register(body: JudgeInt) {
       throw new HttpError('Failed to create judge');
     }
 
-    const judge = data.body;
-
     // Sign In
     const response = await signIn('credentials', {
-      email: judge.email,
-      password: judge.password,
+      email: email,
+      password: password,
       redirect: false,
     });
 

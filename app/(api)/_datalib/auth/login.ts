@@ -1,6 +1,5 @@
 'use server';
 import { NextResponse } from 'next/server';
-import bcrypt from 'bcryptjs';
 import { signIn } from 'auth';
 
 import { HttpError, NotAuthenticatedError } from '@utils/response/Errors';
@@ -17,24 +16,13 @@ export async function Login(body: { email: string; password: string }) {
       throw new NotAuthenticatedError('Judge not found');
     }
 
-    const judge = data.body[0];
-
-    const isPasswordValid = await bcrypt.compare(
-      password as string,
-      judge.password
-    );
-
-    if (!isPasswordValid) {
-      throw new NotAuthenticatedError('Email or Password do not match');
-    }
-
     const response = await signIn('credentials', {
-      email: judge.email,
-      password: judge.password,
+      email: email,
+      password: password,
       redirect: false,
     });
 
-    if (!response?.ok) {
+    if (!response.ok) {
       throw new NotAuthenticatedError('Invalid login credentials');
     }
 
