@@ -1,13 +1,12 @@
 'use client';
 
 import ProtectedDisplay from '@components/ProtectedDisplay/ProtectedDisplay';
-import LoginPage from '../_components/LoginPage/LoginPage';
 // import SearchBar from './_components/SearchBar';
 import ProjectPage from '../_components/ProjectsPage/ProjectPage';
 
 export default function Judges() {
   return (
-    <ProtectedDisplay loadingDisplay={'loading...'} failDisplay={<LoginPage />}>
+    <ProtectedDisplay allowedRoles="admin judge" failRedirectPath="/login">
       <div>
         <ProjectPage />
       </div>

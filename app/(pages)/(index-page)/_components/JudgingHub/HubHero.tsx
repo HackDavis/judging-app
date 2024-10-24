@@ -1,16 +1,13 @@
-import JudgeInt from '@typeDefs/judges';
-import styles from './HubHero.module.scss';
+import { useSession } from 'next-auth/react';
+
 import Image from 'next/image';
 import judgeHeroes from '/public/judges/hub/judgingheroes.svg';
+import styles from './HubHero.module.scss';
 
-export default function HubHero({
-  loading,
-}: {
-  user: JudgeInt;
-  loading: boolean;
-  members: string[];
-}) {
-  if (loading) {
+export default function HubHero() {
+  const { data: _, status } = useSession();
+
+  if (status === 'loading') {
     return 'loading...';
   }
 
