@@ -6,8 +6,8 @@ import { Register } from '@datalib/auth/register';
 import { HttpError, NotAuthenticatedError } from '@utils/response/Errors';
 import FormToJSON from '@utils/form/FormToJSON';
 
-import type AuthTokenInt from '@typeDefs/authToken';
-import type JudgeInt from '@typeDefs/judges';
+import type AuthTokenInt from 'app/_types/authToken';
+import type JudgeInt from 'app/_types/judges';
 
 export default async function RegisterAction(
   prevState: any,

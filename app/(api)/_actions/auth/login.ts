@@ -6,8 +6,8 @@ import { Login } from '@datalib/auth/login';
 import { HttpError, NotAuthenticatedError } from '@utils/response/Errors';
 import FormToJSON from '@utils/form/FormToJSON';
 
-import type AuthTokenInt from '@typeDefs/authToken';
-import JudgeInt from '@typeDefs/judges';
+import type AuthTokenInt from 'app/_types/authToken';
+import JudgeInt from 'app/_types/judges';
 
 export default async function LoginAction(
   prevState: any,

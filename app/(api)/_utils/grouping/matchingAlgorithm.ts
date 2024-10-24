@@ -1,7 +1,7 @@
-import JudgeGroup from '@typeDefs/judgeGroups';
-import Team from '@typeDefs/teams';
+import JudgeGroup from 'app/_types/judgeGroups';
+import Team from 'app/_types/teams';
 import tracks from '../../_data/tracks.json' assert { type: 'json' };
-import JudgeGroupToTeam from '@typeDefs/judgeGroupToTeam';
+import JudgeGroupToTeam from 'app/_types/judgeGroupToTeam';
 
 export default function matchingAlgorithm(
   judgeGroups: JudgeGroup[],

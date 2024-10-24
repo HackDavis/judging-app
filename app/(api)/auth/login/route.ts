@@ -5,7 +5,7 @@ import { cookies } from 'next/headers';
 import jwt from 'jsonwebtoken';
 import { Login } from '@datalib/auth/login';
 import { HttpError, NotAuthenticatedError } from '@utils/response/Errors';
-import type AuthTokenInt from '@typeDefs/authToken';
+import type AuthTokenInt from 'app/_types/authToken';
 
 export async function POST(request: NextRequest) {
   try {

@@ -1,6 +1,6 @@
 import { auth_expiration } from '@apidata/configs';
 import jwt, { Secret } from 'jsonwebtoken';
-import AuthTokenInt from '@typeDefs/authToken';
+import AuthTokenInt from 'app/_types/authToken';
 import HttpError from '@utils/response/HttpError';
 
 export async function createAuthToken(data: object) {

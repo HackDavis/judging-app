@@ -1,5 +1,5 @@
-import Team from '@typeDefs/teams';
-import Submission from '@typeDefs/submissions';
+import Team from 'app/_types/teams';
+import Submission from 'app/_types/submissions';
 import { getManySubmissions } from '@actions/submissions/getSubmission';
 import tracks from '../../_data/tracks.json' assert { type: 'json' };
 

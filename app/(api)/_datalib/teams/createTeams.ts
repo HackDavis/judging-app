@@ -8,7 +8,7 @@ import {
   BadRequestError,
   DuplicateError,
 } from '@utils/response/Errors';
-import Team from '@typeDefs/teams';
+import Team from 'app/_types/teams';
 import tracks from '../../_data/tracks.json' assert { type: 'json' };
 
 export const CreateManyTeams = async (body: object[]) => {

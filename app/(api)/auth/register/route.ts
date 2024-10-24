@@ -4,7 +4,7 @@ import { cookies } from 'next/headers';
 
 import jwt from 'jsonwebtoken';
 import { HttpError } from '@utils/response/Errors';
-import type AuthTokenInt from '@typeDefs/authToken';
+import type AuthTokenInt from 'app/_types/authToken';
 import { Register } from '@datalib/auth/register';
 import { GetManyJudges } from '@datalib/judges/getJudge';
 import getQueries from '@utils/request/getQueries';

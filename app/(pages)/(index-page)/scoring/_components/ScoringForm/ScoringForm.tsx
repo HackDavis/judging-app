@@ -11,8 +11,8 @@ import Submission from './ScoringSubComponents/Submission';
 
 import updateSubmission from '@actions/submissions/updateSubmission';
 
-import TeamInt from '@typeDefs/teams';
-import SubmissionInt from '@typeDefs/submissions';
+import TeamInt from 'app/_types/teams';
+import SubmissionInt from 'app/_types/submissions';
 import { useRouter } from 'next/navigation';
 
 const generalScoreNames = [

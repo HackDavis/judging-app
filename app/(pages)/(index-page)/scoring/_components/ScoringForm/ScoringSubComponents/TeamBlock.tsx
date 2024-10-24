@@ -1,4 +1,4 @@
-import TeamInt from '@typeDefs/teams';
+import TeamInt from 'app/_types/teams';
 import styles from './TeamBlock.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';

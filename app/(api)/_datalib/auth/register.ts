@@ -6,7 +6,7 @@ import { CreateJudge } from '@datalib/judges/createJudge';
 import { DuplicateError, HttpError } from '@utils/response/Errors';
 import { GetManyJudges } from '@datalib/judges/getJudge';
 import { createAuthToken } from './authToken';
-import JudgeInt from '@typeDefs/judges';
+import JudgeInt from 'app/_types/judges';
 
 export async function Register(body: JudgeInt) {
   try {
